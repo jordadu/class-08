@@ -35,7 +35,7 @@ browseURL(url = "https://intro2r.com/loops.html#for-loop", browser = getOption("
 ## Estructura de datos
 dev.off()
 grid.raster(readPNG("input/pics/bucle_flow.png")) # source: datacamp
-browseURL("")
+
 
 #----------------------#
 ## Estructura de un bucle (for)
