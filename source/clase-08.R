@@ -41,14 +41,14 @@ grid.raster(readPNG("input/pics/bucle_flow.png")) # source: datacamp
 ## Estructura de un bucle (for)
 vector =  1:5
 for (i in c(1,2,3,4,5)){ # Vector sobre el que se va a aplicar el loop
-     i = i*i  # Sobreescribe i como el resultado de i*i
+     casa = i*i  # Sobreescribe i como el resultado de i*i
      print(i) # Pinta el resultado sobre la consola
 }
 
 results = tibble(i = 1:5 , resultado = NA)
 for (i in vector){ # Vector sobre el que se va a aplicar el loop
      n = i
-     i = i*i  # Sobreescribe i como el resultado de i*i
+     casa = i*i  # Sobreescribe i como el resultado de i*i
      print(i) # Pinta el resultado sobre la consola
      results$resultado[n] = i
 }
