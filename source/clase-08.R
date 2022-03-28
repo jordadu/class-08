@@ -99,6 +99,14 @@ for(i in 2:ncol(df)){
 }
 df
 
+##==============Con los nombres===========
+df
+names_df=colnames(df)[2:7]
+for(i in names_df){
+  df[,i] = df[,i]*100
+}
+df
+
 #=============================#
 #=== 2. Controles de flujo ===#         
 #=============================#
