@@ -143,29 +143,53 @@ cat("Hacer en clase")
 
 #----------------------#
 ## 1. Lista de archivos 
-
+rutas= list.files("input/chip", full.names = T, recursive = T)
 
 #----------------------#
 ## 2. Hacer ejemplo para una observación
 
 ## 2.1. Leer archivo
 
+df1= import(file= rutas[1])
 
 ## 2.2. Obtener codigo-DANE 
-
+name= colnames(df1)[1]
 
 ## 2.3. Obtener tipo de inversion
-
+tipo= df1[8,2]
 
 ## 2.4. Obtener valor
-
+valor=df1[8,8]
 
 ## 2.5. Exportar resultados
-
+data = tibble(codifo=name, tipo_inv=tipo, valor_int=valor)
+view(data)
 
 #----------------------#
 ## 3. Generalizar loop
 
+data = tibble(codigo=rep(NA,40), 
+              tipo_inv=rep(NA,40), 
+              valor_int=rep(NA,40))
+
+for (i in 1:40) {
+  ## 2.1. Leer archivo
+  
+  df1= import(file= rutas[i])
+  
+  ## 2.2. Obtener codigo-DANE 
+  name= colnames(df1)[1]
+  
+  ## 2.3. Obtener tipo de inversion
+  tipo= df1[8,2]
+  
+  ## 2.4. Obtener valor
+  valor=df1[8,8]
+  
+  data[i,1]=name
+  data[i,2]=tipo
+  data[i,3]=valor
+}
 
 
 
